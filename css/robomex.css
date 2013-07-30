@@ -1,0 +1,237 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+/* beginning of my css */
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	color: #777;
+}
+
+a{
+	text-decoration: none;
+	color: #777;
+}
+
+h1 {
+	font-size: 71px;
+}
+
+h2{
+	text-align: center;
+	font-size: 47px;
+}
+
+h4{
+	font-size: 47px;
+}
+
+h5{
+	font-size: 33px;
+	text-align: center;
+	padding: 8px;
+}
+
+img{
+	position: absolute;
+	left: 50%;
+	display: inline;
+}
+
+.robomex{
+	letter-spacing: 3px;
+	font-weight: 500;
+	font-size: 83px;
+	color: #111;
+	background-color: #fff;
+	z-index: 17;
+	width: 100%;
+	padding-left: 150px;
+}
+
+.robomex.stuck {
+	position:fixed;
+	top: 0;
+}
+
+.container{
+	padding: 150px;
+}
+
+#skrollr-body{
+	width: 100%;
+}
+
+.dark{
+	text-align: right;
+	padding: 150px;
+	background-color: #111;
+}
+
+#stuff{
+	text-align: left;
+	padding: 150px;
+	background-color: #111;
+}
+
+.first{
+	z-index: 33;
+	position: relative;
+}
+
+#bumpity{
+	position: relative;
+	top: -50px;
+}
+
+.break{
+	position: relative;
+	bottom: 36px;
+	left: 133px;
+}
+
+.and{
+	position: relative;
+	top: 35px;
+}
+
+.menu{
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.menu-right{
+	z-index: 47;
+	position: relative;
+	top: 24px;
+	float: right;
+	padding-right: 150px;
+}
+
+.menu-right.stuck{
+	position: fixed;
+	top: 24px;
+	right: 0px;
+	text-align: right;
+}
+
+.roboloop{
+    font-family: 'Nova Square';
+    text-align: center;
+    font-size: 147px;
+    padding: 50px;
+}
+
+.roboloop a {
+  -o-transition:color .5s ease-out, background 2s ease-in;
+  -ms-transition:color .5s ease-out, background 2s ease-in;
+  -moz-transition:color .5s ease-out, background 2s ease-in;
+  -webkit-transition:color .5s ease-out, background 2s ease-in;
+  transition:color .5s ease-out, background 2s ease-in;
+}
+
+
+
+.roboloop a:hover { 
+	color: black; 
+	background: white; 
+}
+
+
+#logo{
+	width: 400px;
+	display: block;
+	margin: auto;
+	padding: 50px;
+}
+
+.face{
+  -o-transition:fill 2s ease-in;
+  -ms-transition:fill 2s ease-in;
+  -moz-transition:fill 2s ease-in;
+  -webkit-transition:fill 2s ease-in;
+  transition:fill 2s ease-in;
+}
+
+.stripes{
+  -o-transition:fill 1s ease-out;
+  -ms-transition:fill 1s ease-out;
+  -moz-transition:fill 1s ease-out;
+  -webkit-transition:fill 1s ease-out;
+  transition:fill 1s ease-out;
+}
+
+#logo:hover .stripes{
+	fill: black;
+}
+
+#logo:hover .face{
+	fill: #f26122;
+}
+
+.left{
+	float: left;
+	text-align: center;
+	width: 33%;
+}
+
+.right{
+	float: right;
+	text-align: center;
+	width: 33%;
+}
+
+
+
