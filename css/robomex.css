@@ -171,7 +171,8 @@ img{
     font-family: 'Nova Square';
     text-align: center;
     font-size: 147px;
-    padding: 50px;
+    padding: 40px;
+    padding-top: 150px;
 }
 
 .roboloop a {
@@ -194,7 +195,7 @@ img{
 	width: 400px;
 	display: block;
 	margin: auto;
-	padding: 50px;
+	margin-bottom: 40px;
 }
 
 .face{
