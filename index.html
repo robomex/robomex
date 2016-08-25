@@ -17,10 +17,11 @@
     </script>
 
     <script type="text/javascript" src="js/aframe.min.js"></script>
-    <script type="text/javascript" src="js/aframe-extras.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+    <script type="text/javascript" src="js/aframe-extras.primitives.min.js"></script>
     <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
     <script type="text/javascript" src="shaders/skyGradient.js"></script>
+    <script type="text/javascript" src="js/aabb-collider.js"></script>
+    <script type="text/javascript" src="js/grab.js"></script>
   </head>
 
   <body>
@@ -32,40 +33,39 @@
       </a-assets>
 
       <!-- Hands -->
-      <a-entity hand-controls="left" sphere-collider="objects: .cylinder;" grab></a-entity>
-      <a-entity hand-controls="right" sphere-collider="objects: .cylinder;" grab></a-entity>
+      <a-entity hand-controls="left" aabb-collider="objects: .cylinder;" grab></a-entity>
+      <a-entity hand-controls="right" aabb-collider="objects: .cylinder;" grab></a-entity>
 
       <!-- Robomex Cylinders -->
-      <a-entity position="0 0 -3">
-        <a-entity class="cylinder" mixin="cylinder" position="0 2 0.02" geometry="radius: 0.25;" material="color: #CE2028;" 
-          animation__opacity="delay: 500; property: material.opacity; dur: 1500; easing: easeInSine; to: 1"
-          animation__scale="delay: 500; property: scale; dur: 2000; easing: easeInSine; to: 1 1 1">
+      <a-entity position="0 0 -1.5">
+        <a-entity class="cylinder" mixin="cylinder" position="0 2 0.02" geometry="radius: 0.1;" material="color: #CE2028;">
+          <a-animation attribute="material.opacity" begin="500" dur="1500" ease="ease-in-cubic" to="1"></a-animation>
+          <a-animation attribute="scale" begin="500" dur="2000" ease="ease-in-bounce" to="1 1 1"></a-animation>
         </a-entity>
-        <a-entity class="cylinder" mixin="cylinder" position="0 2 0.01" geometry="radius: 0.67;" material="color: #FFFFFF;"
-          animation__opacity="property: material.opacity; dur: 1500; delay: 1000; easing: easeInSine; to: 1"
-          animation__scale="property: scale; dur: 2000; delay: 1000; easing: easeInSine; to: 1 1 1">
+        <a-entity class="cylinder" mixin="cylinder" position="0 2 0.01" geometry="radius: 0.264;" material="color: #FFFFFF;">
+          <a-animation attribute="material.opacity" begin="1000" dur="1500" ease="ease-in-cubic" to="1"></a-animation>
+          <a-animation attribute="scale" begin="1000" dur="2000" ease="ease-in-bounce" to="1 1 1"></a-animation>
         </a-entity>
-        <a-entity class="cylinder" mixin="cylinder" position="0 2 0" geometry="radius: 1;" material="color: #006948;"
-          animation__opacity="property: material.opacity; dur: 1500; delay: 1500; easing: easeInSine; to: 1"
-          animation__scale="property: scale; dur: 2000; delay: 1500; easing: easeInSine; to: 1 1 1">
+        <a-entity class="cylinder" mixin="cylinder" position="0 2 0" geometry="radius: .396;" material="color: #006948;">
+          <a-animation attribute="material.opacity" begin="1500" dur="1500" ease="ease-in-cubic" to="1"></a-animation>
+          <a-animation attribute="scale" begin="1500" dur="2000" ease="ease-in-bounce" to="1 1 1"></a-animation>
         </a-entity>
       </a-entity>
 
       <!-- Text -->
       <a-entity bmfont-text="text: VR - Walk around + grab stuff
 
-      Mobile - Tap to move
+      Mobile - Look around
 
-      Desktop - Use W-A-S-D + your mouse" position="1.5 2 -3"
-        animation__opacity="property: bmfont-text.opacity; dur: 10000; easing: easeOutSine; to: 0">
+      Desktop - Use W-A-S-D + your mouse" position="1.5 2 -3">
+        <a-animation attribute="bmfont-text.opacity" dur="10000" ease="ease-in-cubic" to="0"></a-animation>
       </a-entity>
       <a-entity bmfont-text="text: Hi. I'm Tony. I live in Chicago and make stuff.
 
-      I made an iOS app (getTastemaker.com) and write stuff (medium.com/@robomex).; color: white; align: center;" position="-2.5 0 -3">
+      I made an iOS app (getTastemaker.com) and write stuff (medium.com/@robomex).; color: white; align: center;" position="-2.5 0.25 -3">
       </a-entity>
 
       <!-- Environment -->
-      <a-entity camera universal-controls position="0 1.8 0"></a-entity>
       <a-ocean width="50" color="#000" depth="50" density="50" opacity="1"></a-ocean>
       <a-entity id="sky" 
         geometry="primitive: sphere; radius: 65;" 
