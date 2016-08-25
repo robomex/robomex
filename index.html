@@ -28,6 +28,9 @@
     <a-scene fog="color: #FFF; type: exponential; density: 0.1;">
       <a-assets>
         <a-mixin id="cylinder" geometry="primitive: cylinder;" rotation="90 0 0" material="opacity: 0;" scale="0.5 1 0.5"></a-mixin>
+        <a-mixin id="red" material="color: #CE2028;"></a-mixin>
+        <a-mixin id="green" material="color: #006948;"></a-mixin>
+        <a-mixin id="white" material="color: #FFFFFF;"></a-mixin>
         <a-mixin id="cylinder-collided" material="color: #22A7F0;"></a-mixin>
         <a-mixin id="cylinder-grabbed" material="color: #F9690E;"></a-mixin>
       </a-assets>
@@ -38,15 +41,15 @@
 
       <!-- Robomex Cylinders -->
       <a-entity position="0 0 -1.5">
-        <a-entity class="cylinder" mixin="cylinder" position="0 2 0.02" geometry="radius: 0.1;" material="color: #CE2028;">
+        <a-entity class="cylinder" mixin="cylinder red" position="0 2 0.02" geometry="radius: 0.1;">
           <a-animation attribute="material.opacity" begin="500" dur="1500" ease="ease-in-cubic" to="1"></a-animation>
           <a-animation attribute="scale" begin="500" dur="2000" ease="ease-in-bounce" to="1 1 1"></a-animation>
         </a-entity>
-        <a-entity class="cylinder" mixin="cylinder" position="0 2 0.01" geometry="radius: 0.264;" material="color: #FFFFFF;">
+        <a-entity class="cylinder" mixin="cylinder white" position="0 2 0.01" geometry="radius: 0.264;">
           <a-animation attribute="material.opacity" begin="1000" dur="1500" ease="ease-in-cubic" to="1"></a-animation>
           <a-animation attribute="scale" begin="1000" dur="2000" ease="ease-in-bounce" to="1 1 1"></a-animation>
         </a-entity>
-        <a-entity class="cylinder" mixin="cylinder" position="0 2 0" geometry="radius: .396;" material="color: #006948;">
+        <a-entity class="cylinder" mixin="cylinder green" position="0 2 0" geometry="radius: .396;">
           <a-animation attribute="material.opacity" begin="1500" dur="1500" ease="ease-in-cubic" to="1"></a-animation>
           <a-animation attribute="scale" begin="1500" dur="2000" ease="ease-in-bounce" to="1 1 1"></a-animation>
         </a-entity>
