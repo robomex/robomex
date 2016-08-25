@@ -1,41 +1,75 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <title>robomex | tony morales | chicago tech</title>
-  <meta name="description" content="i live in chicago and work on tech things.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/webflow.css">
-  <link rel="stylesheet" type="text/css" href="css/robomex.webflow.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-  <script>
-    WebFont.load({
-      google: {
-        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
-      }
-    });
-  </script>
-  <script type="text/javascript" src="js/modernizr.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/webclip.png">
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-20818674-1'], ['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script');
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</head>
-<body>
-  <div class="w-section logo"><img class="green" src="images/green.svg" data-ix="green"><img class="white" src="images/white.svg" data-ix="white"><img class="red" src="images/red.svg" data-ix="red">
-  </div>
-  <div class="w-section">
-    <h1 data-ix="text-fade-in">Hi. I’m Tony. I’m building&nbsp;<a href="http://grandopens.com">Grand Opens</a>.<br>I have old (likely broken)&nbsp;<a href="http://github.com/robomex">random</a> <a href="https://www.youtube.com/channel/UCQ6kMQ17sXnZLfhWvxhhA-g">projects</a> <a href="http://roboloop.com">everywhere</a> <a href="http://instagrimy.com">online</a>.<br><br>Reach me:<br><a href="http://twitter.com/robomex">twitter</a><br>847.651.7052&nbsp;&nbsp;</h1>
-  </div>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/webflow.js"></script>
-  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>robomex | tony morales | chicago tech</title>
+    <meta name="description" content="i live in chicago and i make things. i make things for vr, webvr, a-frame, ios, the htc vive, and more. i also write.">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/webclip.png">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20818674-1'], ['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <script type="text/javascript" src="js/aframe.min.js"></script>
+    <script type="text/javascript" src="js/aframe-extras.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+    <script type="text/javascript" src="shaders/skyGradient.js"></script>
+  </head>
+
+  <body>
+    <a-scene fog="color: #FFF; type: exponential; density: 0.1;">
+      <a-assets>
+        <a-mixin id="cylinder" geometry="primitive: cylinder;" rotation="90 0 0" material="opacity: 0;" scale="0.5 1 0.5"></a-mixin>
+        <a-mixin id="cylinder-collided" material="color: #22A7F0;"></a-mixin>
+        <a-mixin id="cylinder-grabbed" material="color: #F9690E;"></a-mixin>
+      </a-assets>
+
+      <!-- Hands -->
+      <a-entity hand-controls="left" sphere-collider="objects: .cylinder;" grab></a-entity>
+      <a-entity hand-controls="right" sphere-collider="objects: .cylinder;" grab></a-entity>
+
+      <!-- Robomex Cylinders -->
+      <a-entity position="0 0 -3">
+        <a-entity class="cylinder" mixin="cylinder" position="0 2 0.02" geometry="radius: 0.25;" material="color: #CE2028;" 
+          animation__opacity="delay: 500; property: material.opacity; dur: 1500; easing: easeInSine; to: 1"
+          animation__scale="delay: 500; property: scale; dur: 2000; easing: easeInSine; to: 1 1 1">
+        </a-entity>
+        <a-entity class="cylinder" mixin="cylinder" position="0 2 0.01" geometry="radius: 0.67;" material="color: #FFFFFF;"
+          animation__opacity="property: material.opacity; dur: 1500; delay: 1000; easing: easeInSine; to: 1"
+          animation__scale="property: scale; dur: 2000; delay: 1000; easing: easeInSine; to: 1 1 1">
+        </a-entity>
+        <a-entity class="cylinder" mixin="cylinder" position="0 2 0" geometry="radius: 1;" material="color: #006948;"
+          animation__opacity="property: material.opacity; dur: 1500; delay: 1500; easing: easeInSine; to: 1"
+          animation__scale="property: scale; dur: 2000; delay: 1500; easing: easeInSine; to: 1 1 1">
+        </a-entity>
+      </a-entity>
+
+      <!-- Text -->
+      <a-entity bmfont-text="text: VR - Walk around + grab stuff
+
+      Mobile - Tap to move
+
+      Desktop - Use W-A-S-D + your mouse" position="1.5 2 -3"
+        animation__opacity="property: bmfont-text.opacity; dur: 10000; easing: easeOutSine; to: 0">
+      </a-entity>
+      <a-entity bmfont-text="text: Hi. I'm Tony. I live in Chicago and make stuff.
+
+      I made an iOS app (getTastemaker.com) and write stuff (medium.com/@robomex).; color: white; align: center;" position="-2.5 0 -3">
+      </a-entity>
+
+      <!-- Environment -->
+      <a-entity camera universal-controls position="0 1.8 0"></a-entity>
+      <a-ocean width="50" color="#000" depth="50" density="50" opacity="1"></a-ocean>
+      <a-entity id="sky" 
+        geometry="primitive: sphere; radius: 65;" 
+        material="shader: skyGradient; colorTop: #777; colorBottom: #FFF; side:back"></a-entity>
+    </a-scene>
+  </body>
 </html>
