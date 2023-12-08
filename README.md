@@ -4,4 +4,4 @@
 - 👁️ I’m currently exploring visionOS capabilities and concepts.
 - :email: tony@1984.dev
 - :ballot_box_with_check: Clients include [Walmart](https://www.walmart.com), [Carnegie Mellon University](https://www.cmu.edu) (open source iOS WebXR browser [XR Browser](https://github.com/conix-center/XRBrowser)), [Mozilla](http://mozilla.org), the [NFL](https://www.nfl.com), and many startups.
-- :video_game: Zelda TOTK.
+- :video_game: Talos Principle 2.
